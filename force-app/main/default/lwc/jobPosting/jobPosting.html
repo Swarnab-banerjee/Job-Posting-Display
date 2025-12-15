@@ -1,0 +1,41 @@
+<!--
+  @description       : 
+  @author            : Swarnab Banerjee
+  @group             : 
+  @last modified on  : 12-15-2025
+  @last modified by  : Swarnab Banerjee
+-->
+<template>
+    <lightning-card title="Job Postings" icon-name="standard:job_profile">
+
+        <div class="slds-p-horizontal_medium slds-m-bottom_medium">
+            <lightning-combobox
+                label="Filter by Department"
+                value={selectedDepartment}
+                options={departmentOptions}
+                onchange={handleDepartmentChange}>
+            </lightning-combobox>
+        </div>
+
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-p-horizontal_medium">
+                {error}
+            </div>
+        </template>
+
+        <lightning-datatable
+            key-field="Id"
+            data={filteredPostings}
+            columns={columns}
+            hide-checkbox-column>
+        </lightning-datatable>
+
+        <template if:true={isLoading}>
+            <div class="slds-align_absolute-center slds-m-top_medium">
+                <lightning-spinner alternative-text="Loading Job Postings">
+                </lightning-spinner>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>
