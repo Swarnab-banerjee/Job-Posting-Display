@@ -1,13 +1,15 @@
 /**
- * @description       : 
+ * @description       : Controller Class which fetches all Fields from Job Posting Object
+ * @version           : 1.0.0
+ * @type              : Controller
  * @author            : Swarnab Banerjee
  * @group             : 
- * @last modified on  : 12-15-2025
+ * @last modified on  : 12-23-2025
  * @last modified by  : Swarnab Banerjee
 **/
 public with sharing class JobPostingHelper {
     /**
-    * @description 
+    * @description : Gets all Fields and returns it to the LWC
     * @author Swarnab Banerjee | 12-15-2025 
     * @return List<Job_Posting__c> 
     **/
